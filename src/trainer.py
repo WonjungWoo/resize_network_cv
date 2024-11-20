@@ -33,7 +33,7 @@ def main(cfg: DictConfig):
                                save_last=True,
                                mode='max')
 
-    trainer = Trainer(gpus=cfg.gpus,
+    trainer = Trainer(devices=cfg.gpus, accelerator='gpu',
                       benchmark=True,
                       callbacks=[callback],
                       check_val_every_n_epoch=cfg.check_val_every_n_epoch,
